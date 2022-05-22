@@ -28,10 +28,10 @@ const Dashboard = () => {
 
     return (
         <div>
-            <Card style={{ marginBottom: 10 }}>
+            <Card bg='info' style={{ marginBottom: 10 }}>
                 <WebCamera/>
             </Card>
-            <Button variant="dark" onClick={() => toggleCamera(Camera)}>{Btn}</Button>
+            {/* <Button variant="warning" onClick={() => toggleCamera(Camera)}>{Btn}</Button> */}
         </div>
     );
 }
