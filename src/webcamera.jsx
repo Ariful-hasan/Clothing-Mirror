@@ -1,5 +1,6 @@
 import Webcam from "react-webcam";
 import { useRef, useState, useEffect  } from 'react';
+import Axios from 'axios';
 
 const WebCamera = ({dress}) => {
 
@@ -26,7 +27,12 @@ const WebCamera = ({dress}) => {
         selfie: imageSrc,
         cloth: dress
       }
+
       console.table(data);
+      Axios.post("localhost:105/window/", {data})
+      .then(res => console.log(res)).
+      catch (err => console.log(err));
+      
       //return image;
     }
     
