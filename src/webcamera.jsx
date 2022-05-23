@@ -29,7 +29,7 @@ const WebCamera = ({dress}) => {
       }
 
       console.table(data);
-      Axios.post("localhost:105/window/", {data})
+      Axios.post("http://localhost:105/window/", {data})
       .then(res => console.log(res)).
       catch (err => console.log(err));
       
