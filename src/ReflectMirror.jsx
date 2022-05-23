@@ -9,7 +9,7 @@ const ReflectMirror = () => {
     let [image, setImage] = useState();
 
     let handleReflectImage = async () => {
-        await Axios.get("http://localhost:105/final/")
+        await Axios.post("http://localhost:105/final/", {})
             .then(res => {
                 console.log(res);
                 //console.log(res);
