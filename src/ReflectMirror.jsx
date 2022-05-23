@@ -8,12 +8,11 @@ const ReflectMirror = () => {
 
     let [image, setImage] = useState();
 
-    let handleReflectImage = async () => {
-        await Axios.post("http://localhost:105/final/", {})
+    let handleReflectImage = () => {
+        let data = {data:"data"};
+        Axios.post("http://localhost:105/final/", {data})
             .then(res => {
                 console.log(res);
-                //console.log(res);
-                //setImage(res.data[0].url);
             })
             .catch(err => {
                 console.log(err);
