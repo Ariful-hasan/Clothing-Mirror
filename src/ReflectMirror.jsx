@@ -23,7 +23,7 @@ const ReflectMirror = () => {
     return (
         <>
             <Card bg='info'>
-                <img className='pull-right' fluid src={image ? image : "./img.svg"} alt="img" style={{height:520, width:600}}/>
+                <img src={image ? image : "./img.svg"} alt="img" style={{height:520, width:600}}/>
             </Card>
             <Button variant="success" onClick={handleReflectImage}>Show</Button>
         </>
