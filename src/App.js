@@ -5,12 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dress from './DressList';
 import WebCamera from './webcamera';
 import ReflectMirror from './ReflectMirror';
-
-
+import { useState  } from 'react';
 
 function App() {
 
- 
+  const [dress, setDress] = useState(null);
+
+  let handleDress = (e) => {
+    console.log('dress clicked...');
+    let dress = e.target.getAttribute('src').split("/")[2];
+    setDress(dress);
+  }
 
   return (
 
@@ -22,7 +27,7 @@ function App() {
             <Card bg='primary' border="primary">
               <Card.Body className='text-center'>
                 <Card.Title>Camera</Card.Title>
-                <WebCamera/>
+                <WebCamera dress={dress}/>
               </Card.Body>
             </Card>
           </Col>
@@ -37,7 +42,7 @@ function App() {
           </Col>
 
           <Col md={{ span: 12 }} className="mt-5">
-            <Dress />
+            <Dress handleDress={handleDress}/>
           </Col>
 
         </Row>

@@ -1,10 +1,17 @@
 import Webcam from "react-webcam";
-import { useRef, useState  } from 'react';
+import { useRef, useState, useEffect  } from 'react';
 
-const WebCamera = ({handleCapturedImage}) => {
+const WebCamera = ({dress}) => {
 
   const webcamRef = useRef();
   const [image, setImage] = useState();
+  const [cloth, setCloth] = useState();
+
+  useEffect(() => {
+    console.log('webcam component...');
+    console.log(dress);
+    setCloth(dress);
+  },[dress]);
 
     const videoConstraints = {
         width: 720,
@@ -15,7 +22,11 @@ const WebCamera = ({handleCapturedImage}) => {
     let handleCaptureScreenshot = ()  => {
       const imageSrc = webcamRef.current.getScreenshot();
       setImage(imageSrc);
-      console.log(imageSrc);
+      let data = {
+        selfie: imageSrc,
+        cloth: dress
+      }
+      console.table(data);
       //return image;
     }
     
