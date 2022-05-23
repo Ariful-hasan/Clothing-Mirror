@@ -13,7 +13,7 @@ const ReflectMirror = () => {
         Axios.post("http://localhost:105/final/", {data})
             .then(res => {
                 console.log(res.data.image_url);
-                setImage(res.data.image_url);
+                setImage("./result/fittingOntoUser.jpg");
             })
             .catch(err => {
                 console.log(err);
