@@ -14,8 +14,8 @@ const WebCamera = ({dress}) => {
   },[dress]);
 
     const videoConstraints = {
-        width: 720,
-        height: 1280,
+        width: 612,
+        height: 816,
         facingMode: "user"
     };
 
@@ -34,9 +34,9 @@ const WebCamera = ({dress}) => {
         <Webcam
           ref={webcamRef}
           audio={false}
-          height={580}
+          height={520}
           screenshotFormat="image/jpeg"
-          width={680}
+          width={600}
           videoConstraints={videoConstraints}
         >
           {() => (
